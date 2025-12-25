@@ -33,7 +33,7 @@ npm install
 ```
 
 ### 2. Configure Environment Variables
-Create a .env file in the root directory:
+Create a `.env` file in the root directory:
 ```bash
 # Database connection (PostgreSQL recommended for production)
 DATABASE_URL="postgresql://user:password@host:port/db"
@@ -65,21 +65,28 @@ npm run crawler
 ---
 
 ## ✨ Key Features
+
 This explorer goes beyond simple data display. It provides powerful tools for node operators and investors.
-🔍 Advanced Discovery
-Hybrid Crawler: Combines Gossip Protocol discovery (for full network view) with direct RPC polling (for detailed metrics).
-Self-Healing: Automatically detects node status changes and updates metadata.
-Deep Metrics: Tracks Used vs Committed Storage, Block Height, and Network Traffic.
-📊 Interactive Analytics
-Live Network Map: Neon-styled interactive map showing global node distribution.
-Real-time Graphs: Visualizing storage growth and resource usage over time.
-ISP Decentralization: Analysis of network providers to ensure decentralization health.
-🛠️ Power User Tools
-⌘K Command Palette: Press Ctrl+K (or Cmd+K) anywhere to instantly search nodes or navigate pages.
-Compare Tool: Select up to 3 nodes to compare their performance side-by-side.
-Live Activity Feed: Real-time stream of network events (new nodes, updates, offline status).
-🔔 Alert System
-Telegram Integration: Get instant notifications when your favorite node goes offline.
-Watchlist: Track specific nodes directly from the dashboard.
-👨‍💻 Contribution
-Contributions are welcome! Please feel free to submit a Pull Request.
+
+### 🔍 Advanced Discovery
+
+- **Hybrid Crawler:** Combines Gossip Protocol discovery (for full network view) with direct RPC polling (for detailed metrics).
+- **Self-Healing:** Automatically detects node status changes and updates metadata.
+- **Deep Metrics:** Tracks Used vs Committed Storage, Block Height, and Network Traffic.
+
+### 📊 Interactive Analytics
+
+- **Live Network Map:** Neon-styled interactive map showing global node distribution.
+- **Real-time Graphs:** Visualizing storage growth and resource usage over time.
+- **ISP Decentralization:** Analysis of network providers to ensure decentralization health.
+
+### 🛠️ Power User Tools
+
+- **⌘K Command Palette:** Press `Ctrl+K` (or `Cmd+K`) anywhere to instantly search nodes or navigate pages.
+- **Compare Tool:** Select up to 3 nodes to compare their performance side-by-side.
+- **Live Activity Feed:** Real-time stream of network events (new nodes, updates, offline status).
+
+### 🔔 Alert System
+
+- **Telegram Integration:** Get instant notifications when your favorite node goes offline.
+- **Watchlist: Track specific** nodes directly from the dashboard.
