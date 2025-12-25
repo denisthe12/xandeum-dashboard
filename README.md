@@ -56,9 +56,13 @@ npx prisma db push
 npm run dev
 ```
 Open http://localhost:3000 in your browser.
-Note: To populate data locally, run the crawler manually:
+
+**Note: To populate data locally, run the crawler manually:**
+```bash
 npm run crawler
-✨ Key Features
+```
+
+## ✨ Key Features
 This explorer goes beyond simple data display. It provides powerful tools for node operators and investors.
 🔍 Advanced Discovery
 Hybrid Crawler: Combines Gossip Protocol discovery (for full network view) with direct RPC polling (for detailed metrics).
