@@ -1,0 +1,104 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Модель для хранения информации об узле (Node)
+model PNode {
+  id                String      @id @default(uuid())
+  ipAddress         String      @unique // IP:PORT (обычно 9001)
+  
+  pubkey            String?     // <--- НОВОЕ: Публичный ключ
+  version           String?
+  
+  // Статусы
+  isActive          Boolean     @default(true)  // Gossip Active
+  isRpcActive       Boolean     @default(false) // Public (is_public from API)
+  
+  // Время
+  firstSeenAt       DateTime    @default(now())
+  lastSeenAt        DateTime    @updatedAt
+  
+  // Гео
+  country           String?
+  city              String?
+  latitude          Float?
+  longitude         Float?
+  isp               String?
+  
+  // Метрики (Текущие)
+  healthScore       Int         @default(0)
+  currentStorageBytes Float     @default(0) // storage_committed
+  usedStorageBytes    Float     @default(0) // storage_used
+  storageUsagePercent Float     @default(0) // storage_usage_percent
+  lastLatencyMs       Int         @default(0)
+  
+  // Оставляем для совместимости (можно будет заполнять отдельным воркером)
+  currentPacketsIn  Float       @default(0) 
+  currentPacketsOut Float       @default(0) 
+  blockHeight       Int         @default(0)
+  gossipUptime      Int         @default(0)
+  credits           Int         @default(0) 
+
+  
+  stats             NodeStats[]
+}
+
+// Модель для хранения исторических метрик
+model NodeStats {
+  id                String   @id @default(uuid())
+  nodeId            String
+  recordedAt        DateTime @default(now())
+  
+  totalBytesStored  Float    // committed
+  usedBytesStored   Float    // used
+  
+  // Остальные поля можно оставить nullable или 0, так как get-pods-with-stats их не дает
+  cpuPercent        Float    @default(0)
+  ramUsedBytes      Float    @default(0)
+  ramTotalBytes     Float    @default(0)
+  uptimeSeconds     Float    @default(0)
+  activeStreams     Int      @default(0)
+  packetsIn         Float    @default(0)
+  packetsOut        Float    @default(0)
+  blockHeight       Int      @default(0)
+  totalFilesStored  Float    @default(0)
+  latencyMs         Int?
+  
+  node              PNode    @relation(fields: [nodeId], references: [id])
+}
+
+model Subscriber {
+  id          String   @id @default(uuid())
+  connectCode String   @unique // Тот самый 6-значный код
+  chatId      String?  // ID чата в Telegram (заполнится ботом)
+  createdAt   DateTime @default(now())
+
+  watchedNodes WatchedNode[]
+}
+
+model WatchedNode {
+  id           String     @id @default(uuid())
+  subscriberId String
+  nodeIp       String     // IP ноды, за которой следим
+  
+  subscriber   Subscriber @relation(fields: [subscriberId], references: [id])
+
+  // Уникальность: один юзер не может дважды подписаться на одну ноду
+  @@unique([subscriberId, nodeIp])
+}
+
+model ActivityLog {
+  id        String   @id @default(uuid())
+  nodeIp    String
+  country   String?
+  type      String   // "NEW_NODE", "UPDATE", "OFFLINE", "ONLINE", "SCORE_UP"
+  message   String
+  createdAt DateTime @default(now())
+}
