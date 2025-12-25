@@ -47,6 +47,9 @@ export default function AlertsPage() {
                   {copied ? <Check /> : <Copy />}
                 </button>
               </div>
+              <div className="mt-4 text-sm text-slate-500">
+                Bot Link: <a href="https://t.me/xandeum_node_bot" target="_blank" className="text-blue-400 underline">@xandeum_node_bot</a>
+              </div>
             </>
           )}
         </div>
