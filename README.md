@@ -30,11 +30,11 @@ You can deploy your own instance of this explorer in minutes.
 git clone https://github.com/YOUR_USERNAME/xandeum-explorer.git
 cd xandeum-explorer
 npm install
+```
 
-## 2. Configure Environment Variables
+### 2. Configure Environment Variables
 Create a .env file in the root directory:
-code
-Env
+```bash
 # Database connection (PostgreSQL recommended for production)
 DATABASE_URL="postgresql://user:password@host:port/db"
 
@@ -43,17 +43,18 @@ TELEGRAM_BOT_TOKEN="your_telegram_bot_token"
 
 # Secret key for Cron Jobs protection
 CRON_SECRET="my_super_secret_key"
+```
 
-3. Initialize Database
-code
-Bash
+### 3. Initialize Database
+```bash
 npx prisma generate
 npx prisma db push
+```
 
-4. Run Development Server
-code
-Bash
+### 4. Run Development Server
+```bash
 npm run dev
+```
 Open http://localhost:3000 in your browser.
 Note: To populate data locally, run the crawler manually:
 npm run crawler
