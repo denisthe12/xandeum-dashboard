@@ -66,7 +66,7 @@ Open http://localhost:3000 in your browser.
 npm run crawler
 ```
 
-**Node:** For full functionality, open three terminal windows and run:
+**Note:** For full functionality, open three terminal windows and run:
 - `npm run dev` (Frontend)
 - `npm run crawler` (Data Collector)
 - `npx ts-node scripts/run-bot.ts` (Telegram bot)
