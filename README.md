@@ -5,7 +5,7 @@
 **Live Demo:** [https://xandeum-nodes-dashboard.vercel.app/](https://xandeum-nodes-dashboard.vercel.app/)
 
 ![Dashboard Preview](https://i.ibb.co.com/wN0qDDDw/Xandeum-p-Node-Explorer-12-25-2025-11-23-PM.png) 
-*(Replace this link with a real screenshot of your dashboard later)*
+
 
 ## 🚀 Tech Stack
 
@@ -28,7 +28,7 @@ You can deploy your own instance of this explorer in minutes.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/xandeum-explorer.git
+git clone https://github.com/denisthe12/xandeum-dashboard.git
 cd xandeum-explorer
 npm install
 ```
