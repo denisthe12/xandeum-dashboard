@@ -2,9 +2,8 @@ name: Crawler Trigger
 
 on:
   schedule:
-    # Запускать каждые 5 минут
     - cron: '*/5 * * * *'
-  workflow_dispatch: # Позволяет запустить вручную кнопку
+  workflow_dispatch:
 
 jobs:
   ping-crawler:
@@ -12,5 +11,7 @@ jobs:
     steps:
       - name: Call Vercel Cron
         run: |
-          curl -X GET "${{ secrets.VERCEL_URL }}/api/cron" \
+          # Используем флаг -v (verbose) чтобы видеть заголовки
+          # И флаг --fail чтобы Action падал, если сервер вернет ошибку (не 200)
+          curl -v --fail -X GET "${{ secrets.VERCEL_URL }}/api/cron" \
           -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
