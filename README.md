@@ -30,7 +30,7 @@ You can deploy your own instance of this explorer in minutes.
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/denisthe12/xandeum-dashboard.git
-cd xandeum-explorer
+cd xandeum-dashboard
 npm install
 ```
 
