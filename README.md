@@ -1,9 +1,9 @@
 # ⚡ Xandeum pNode Explorer
 
 > The most advanced analytics platform for the Xandeum storage network.
-> **Live Demo:** [https://******](********)
+> **Live Demo:** [https://xandeum-nodes-dashboard.vercel.app/](https://xandeum-nodes-dashboard.vercel.app/)
 
-![Dashboard Preview](******) 
+![Dashboard Preview](https://i.ibb.co.com/wN0qDDDw/Xandeum-p-Node-Explorer-12-25-2025-11-23-PM.png) 
 *(Replace this link with a real screenshot of your dashboard later)*
 
 ## 🚀 Tech Stack
