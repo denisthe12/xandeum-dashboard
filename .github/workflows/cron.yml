@@ -1,0 +1,16 @@
+name: Crawler Trigger
+
+on:
+  schedule:
+    # Запускать каждые 5 минут
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Позволяет запустить вручную кнопку
+
+jobs:
+  ping-crawler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Vercel Cron
+        run: |
+          curl -X GET "${{ secrets.VERCEL_URL }}/api/cron" \
+          -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
