@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call Vercel Cron
+        env: 
+          URL: ${{ secrets.VERCEL_URL }}
+          TOKEN: ${{ secrets.CRON_SECRET }}
         run: |
-          # Используем флаг -v (verbose) чтобы видеть заголовки
-          # И флаг --fail чтобы Action падал, если сервер вернет ошибку (не 200)
-          curl -v --fail -X GET "${{ secrets.VERCEL_URL }}/api/cron" \
-          -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+          curl -v -L --fail "$URL/api/cron" \
+          -H "Authorization: Bearer $TOKEN"
