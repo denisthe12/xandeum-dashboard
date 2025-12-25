@@ -37,7 +37,7 @@ npm install
 ### 2. Configure Environment Variables
 Create a `.env` file in the root directory:
 ```bash
-# Database connection (PostgreSQL recommended for production)
+# Database connection 
 DATABASE_URL="postgresql://user:password@host:port/db"
 
 # Telegram Bot Token (for Alerts)
@@ -46,6 +46,8 @@ TELEGRAM_BOT_TOKEN="your_telegram_bot_token"
 # Secret key for Cron Jobs protection
 CRON_SECRET="my_super_secret_key"
 ```
+
+**Note:** You need to insert your own database connection string and bot token.
 
 ### 3. Initialize Database
 ```bash
@@ -59,10 +61,15 @@ npm run dev
 ```
 Open http://localhost:3000 in your browser.
 
-**Note: To populate data locally, run the crawler manually:**
+**To populate data locally, run the crawler manually:**
 ```bash
 npm run crawler
 ```
+
+**Node:** For full functionality, open three terminal windows and run:
+- `npm run dev` (Frontend)
+- `npm run crawler` (Data Collector)
+- `npx ts-node scripts/run-bot.ts` (Telegram bot)
 
 ---
 
@@ -91,4 +98,4 @@ This explorer goes beyond simple data display. It provides powerful tools for no
 ### 🔔 Alert System
 
 - **Telegram Integration:** Get instant notifications when your favorite node goes offline.
-- **Watchlist: Track specific** nodes directly from the dashboard.
+- **Watchlist**: Track specific nodes directly from the dashboard.
