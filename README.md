@@ -4,7 +4,8 @@
 
 **Live Demo:** [https://xandeum-nodes-dashboard.vercel.app/](https://xandeum-nodes-dashboard.vercel.app/)
 
-![Dashboard Preview](https://i.ibb.co.com/4H0gs8K/Xandeum-p-Node-Explorer-12-25-2025-11-26-PM.png) 
+![Dashboard Preview](https://i.ibb.co.com/4H0gs8K/Xandeum-p-Node-Explorer-12-25-2025-11-26-PM.png)
+![Dashboard Preview](https://i.ibb.co.com/PG5Xzs1W/Xandeum-p-Node-Explorer-12-25-2025-11-29-PM.png) 
 
 
 ## 🚀 Tech Stack
