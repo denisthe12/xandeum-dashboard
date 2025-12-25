@@ -62,6 +62,8 @@ Open http://localhost:3000 in your browser.
 npm run crawler
 ```
 
+---
+
 ## ✨ Key Features
 This explorer goes beyond simple data display. It provides powerful tools for node operators and investors.
 🔍 Advanced Discovery
