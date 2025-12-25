@@ -31,7 +31,7 @@ git clone https://github.com/YOUR_USERNAME/xandeum-explorer.git
 cd xandeum-explorer
 npm install
 
-2. Configure Environment Variables
+## 2. Configure Environment Variables
 Create a .env file in the root directory:
 code
 Env
