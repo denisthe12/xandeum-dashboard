@@ -30,6 +30,7 @@ You can deploy your own instance of this explorer in minutes.
 git clone https://github.com/YOUR_USERNAME/xandeum-explorer.git
 cd xandeum-explorer
 npm install
+
 2. Configure Environment Variables
 Create a .env file in the root directory:
 code
@@ -42,11 +43,13 @@ TELEGRAM_BOT_TOKEN="your_telegram_bot_token"
 
 # Secret key for Cron Jobs protection
 CRON_SECRET="my_super_secret_key"
+
 3. Initialize Database
 code
 Bash
 npx prisma generate
 npx prisma db push
+
 4. Run Development Server
 code
 Bash
