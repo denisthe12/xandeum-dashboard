@@ -9,7 +9,9 @@ export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
   // Простая защита, чтобы кто попало не запускал краулер
   const authHeader = req.headers.get('authorization');
-
+  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    return new NextResponse('Unauthorized', { status: 401 });
+  }
 
   try {
     console.log("⏰ Cron started...");
